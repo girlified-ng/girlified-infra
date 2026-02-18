@@ -65,15 +65,15 @@ export class CreateAccountDTO {
   @IsOptional()
   phone: string;
 
-  @Transform(({ value }) => trimTransformer(value))
-  @ApiProperty({
-    example: 'LVSX1902123',
-    description: 'Referral code of the user (Optional).',
-  })
-  @IsOptional()
-  @IsString()
-  // @MaxLength(10)
-  referralCode: string;
+  // @Transform(({ value }) => trimTransformer(value))
+  // @ApiProperty({
+  //   example: 'LVSX1902123',
+  //   description: 'Referral code of the user (Optional).',
+  // })
+  // @IsOptional()
+  // @IsString()
+  // // @MaxLength(10)
+  // referralCode: string;
 
   // @ApiPropertyOptional({
   //   example: 'Lagos',

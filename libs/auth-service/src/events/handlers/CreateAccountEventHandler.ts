@@ -34,16 +34,16 @@ export class CreateAccountEventHandler
 
       const { account, payload } = event;
 
-      if (payload?.referralCode?.length > 0) {
-        const referringUser = await this.accountRepository.findOneBy({
-          referralCode: payload?.referralCode,
-        });
+      // if (payload?.referralCode?.length > 0) {
+      //   const referringUser = await this.accountRepository.findOneBy({
+      //     referralCode: payload?.referralCode,
+      //   });
 
-        await this.referralRepository.save({
-          user: referringUser,
-          referredUser: account,
-        });
-      }
+      //   await this.referralRepository.save({
+      //     user: referringUser,
+      //     referredUser: account,
+      //   });
+      // }
 
       await this.notificationRepository.save({
         title: '👋 Welcome to Girlified',

@@ -36,11 +36,11 @@ export class CreateAccountHandler
         Object.entries(payload).filter(
           ([key]) =>
             ![
-              'referralCode',
               'password',
               'firstName',
               'lastName',
               'phone',
+              // 'referralCode',
             ].includes(key),
         ),
       );
@@ -81,12 +81,12 @@ export class CreateAccountHandler
           lastName: payload.lastName,
           phone: payload.phone,
           email: payload.email,
-          referralCode: referralCode,
           password,
           isProfileUpdated: true,
           signupVerificationHash: hash,
           activationCode: activationCode,
           activationCodeExpires: activationCodeExpiration,
+          // referralCode: referralCode,
         });
 
         await this.accountRepository.save(existingHash);
@@ -104,11 +104,11 @@ export class CreateAccountHandler
         const referralCode = await this.authService.generateReferralCode();
 
         const newAccount = await this.accountRepository.save({
+          // referralCode,
           firstName: payload.firstName,
           lastName: payload.lastName,
           phone: payload.phone,
           email: payload.email,
-          referralCode,
           password,
           isProfileUpdated: true,
           signupVerificationHash: hash,
