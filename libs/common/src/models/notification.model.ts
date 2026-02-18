@@ -31,7 +31,6 @@ export class Notification {
   @Column({ default: false })
   isRead: boolean;
 
-
   @ManyToOne(() => Account, {
     onDelete: 'CASCADE',
     eager: true,

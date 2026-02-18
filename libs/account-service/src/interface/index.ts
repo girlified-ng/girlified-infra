@@ -20,13 +20,7 @@ import {
   toLowerCaseTransformer,
 } from '@app/common/src/helpers/local-class-validator';
 import {
-  AdditionalTracking,
-  BirthControlMethod,
-  CycleGoal,
-  HealthCondition,
   MonthlySurveyPeriodDuration,
-  PeriodSymptomEnum,
-  ReminderType,
 } from '@app/common/src/constants/enums';
 
 export class UpdateFCMTokenDTO {

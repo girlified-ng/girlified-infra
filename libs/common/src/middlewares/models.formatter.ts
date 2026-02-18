@@ -21,7 +21,6 @@ export function FormatAccountInfo(account: Account): AccountInfo {
   delete account.temporalAccessToken;
   delete account.activationCodeExpires;
   delete account.signupVerificationHash;
-  delete account.signupVerificationHash;
   delete account.passwordResetCodeExpires;
 
   return {
