@@ -1,0 +1,76 @@
+export const girlified_smart_pad_medical_report_email_html_content = (
+  markdownContent: string,
+) => {
+  // 2) Wrap in your styled template
+  return `<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="telephone=no" name="format-detection">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; padding: 0;
+      background-color: #FFFFFF;
+      font-family: 'Barlow', sans-serif;
+    }
+    .wrapper {
+      background-color: #efefef;
+      padding: 50px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 15px;
+    }
+    .logo{
+      padding: 20px 0;
+      display: flex;
+      margin: 0 auto;
+    }
+    .content {
+      padding: 20px;
+      background-color: #fdfdfe;
+      color: #1C3B4E;
+      line-height: 1.6;
+    }
+    .content h1, .content h2, .content h3 {
+      color: #1C3B4E;
+    }
+    .content a {
+      color: #0066CC;
+      text-decoration: none;
+    }
+    .footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777777;
+    }
+    @media only screen and (max-width: 600px) {
+      .wrapper { padding: 0; }
+      .container { border-radius: 0; }
+      .content { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <img class="logo" src="https://dp20430eecj0w.cloudfront.net/versions/original/ca848a9f-480b-40be-97ad-4804fb0a50a3_girlified_logo.png" width="80" alt="Girlified Logo"/>
+      <div class="content">
+        ${markdownContent}
+      </div>
+      <div class="footer">
+        <p>Girlified Smart Pad</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+};
