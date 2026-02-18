@@ -56,7 +56,7 @@ export function GetSystemJWTModule() {
 }
 
 export const initializeApp = (app: any) => {
-  initializeFirebaseAdmin();
+  // initializeFirebaseAdmin();
   
   if (config.enableCors) {
     app.enableCors(config.cors);
