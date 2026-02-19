@@ -31,7 +31,7 @@ export class OrderEmailNotificationService {
     this.emailSenderService.sendEmail({
       html: htmlContent,
       sub: 'New Sanitary Pad Order',
-      to_email: 'support@girlified.com.ng',
+      to_email: 'orders@girlified.com.ng',
     });
 
     // this.emailSenderService.sendEmail({

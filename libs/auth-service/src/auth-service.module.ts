@@ -15,7 +15,6 @@ import { GetSystemJWTModule } from 'libs/common/src/middlewares/config';
 import { Notification } from '@app/common/src/models/notification.model';
 import { AuthHelperController } from './controllers/auth.helper.controller';
 import { HelperServiceModule } from 'libs/helper-service/src/helper-service.module';
-import { AddressHelperController } from 'libs/helper-service/src/controllers/address.helper.controller';
 import { AuthEmailNotificationService } from '@app/notification-service/src/services/email/auth.email.notification.service';
 
 @Module({
@@ -41,7 +40,7 @@ import { AuthEmailNotificationService } from '@app/notification-service/src/serv
     ...AuthServiceCommandHandlers,
   ],
   exports: [AuthService],
-  controllers: [AuthController, AuthHelperController, AddressHelperController],
+  controllers: [AuthController, AuthHelperController],
 })
 export class AuthServiceModule {
   constructor(private configService: ConfigService) {
