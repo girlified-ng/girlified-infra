@@ -4,7 +4,7 @@ import {
 	CreateDateColumn,
 	PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 @Entity()
 export class Testimonial {
@@ -54,56 +54,56 @@ export class Testimonial {
 }
 
 export class TestimonialInfo {
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The ID of the testimonial',
 		example: '1',
 		type: String,
 	})
 	id: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The author of the testimonial',
 		example: 'John Doe',
 		type: String,
 	})
 	author: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The avatar URL of the testimonial',
 		example: 'https://example.com/avatar.png',
 		type: String,
 	})
 	avatarUrl: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		type: String,
 		example: '25 Years',
 		description: 'The age of the user',
 	})
 	age: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The testimonial',
 		example: 'This is a testimonial',
 		type: String,
 	})
 	testimonial: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The handle of the user',
 		example: '@johndoe',
 		type: String,
 	})
 	handle: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The platform of the user',
 		example: 'Instagram',
 		type: String,
 	})
 	platform: string;
 
-	@ApiProperty({
+	@ApiPropertyOptional({
 		description: 'The created at date of the testimonial',
 		example: '2021-01-01',
 		type: Date,
