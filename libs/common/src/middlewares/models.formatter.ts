@@ -76,7 +76,9 @@ export function FormatTestimonialInfo(
   return {
     age: testimonial.age,
     author: testimonial.author,
+    handle: testimonial.handle,
     id: testimonial.id.toString(),
+    platform: testimonial.platform,
     avatarUrl: testimonial.avatarUrl,
     createdAt: testimonial.createdAt,
     testimonial: testimonial.testimonial,

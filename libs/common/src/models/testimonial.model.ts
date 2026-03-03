@@ -90,6 +90,20 @@ export class TestimonialInfo {
 	testimonial: string;
 
 	@ApiProperty({
+		description: 'The handle of the user',
+		example: '@johndoe',
+		type: String,
+	})
+	handle: string;
+
+	@ApiProperty({
+		description: 'The platform of the user',
+		example: 'Instagram',
+		type: String,
+	})
+	platform: string;
+
+	@ApiProperty({
 		description: 'The created at date of the testimonial',
 		example: '2021-01-01',
 		type: Date,
