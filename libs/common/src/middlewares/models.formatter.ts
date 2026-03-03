@@ -6,6 +6,7 @@ import { Order, OrderInfo } from '../models/order.model';
 import { AccountInfo, Account } from '../models/account.model';
 import { Notification, NotificationInfo } from '../models/notification.model';
 import { FormatMonthlySurveyPeriodDurationEnum } from '../helpers/enum.helper';
+import { Testimonial, TestimonialInfo } from '../models/testimonial.model';
 
 export function FormatAccountInfo(account: Account): AccountInfo {
   delete account.password;
@@ -69,9 +70,23 @@ export function FormatOrderInfo(order: Order): OrderInfo {
   } as OrderInfo;
 }
 
+export function FormatTestimonialInfo(
+  testimonial: Testimonial,
+): TestimonialInfo {
+  return {
+    age: testimonial.age,
+    author: testimonial.author,
+    id: testimonial.id.toString(),
+    avatarUrl: testimonial.avatarUrl,
+    createdAt: testimonial.createdAt,
+    testimonial: testimonial.testimonial,
+  } as TestimonialInfo;
+}
+
 export default {
   FormatOrderInfo,
   FormatAccountInfo,
   FormatNotification,
+  FormatTestimonialInfo,
   FormatMonthlySurveyInfo,
 };

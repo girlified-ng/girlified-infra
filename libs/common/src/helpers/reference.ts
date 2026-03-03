@@ -1,5 +1,5 @@
 function makeOrderReference(): string {
-  const ORDER_PREFIX = 'VNL-ORD';
+  const ORDER_PREFIX = 'GRL-ORD';
   const timestamp = getTimeStampID();
   return `${ORDER_PREFIX}-${timestamp}`;
 }

@@ -13,6 +13,7 @@ import { CommonModule } from 'libs/common/src/common.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from 'libs/common/src/auth/jwt.strategy';
 import { AppLogger } from 'libs/common/src/logger/logger.service';
+import { EngagementServiceModule } from '@app/engagement-service/src';
 import { DatabaseSource } from 'libs/common/src/database/database-source';
 import { AccountServiceModule } from '@app/account-service/src/account-service.module';
 import { DeviceInfoMiddleware } from 'libs/common/src/middlewares/device.info.middleware';
@@ -25,6 +26,7 @@ import { NotificationServiceModule } from '@app/notification-service/src/notific
     CommonModule,
     AuthServiceModule,
     AccountServiceModule,
+    EngagementServiceModule,
     NotificationServiceModule,
     TypeOrmModule.forRoot(DatabaseSource),
     CacheModule.register({ isGlobal: true }),
@@ -47,6 +49,10 @@ import { NotificationServiceModule } from '@app/notification-service/src/notific
       {
         path: 'v1/auth',
         module: AuthServiceModule,
+      },
+      {
+        path: 'v1/engagement',
+        module: EngagementServiceModule,
       },
     ]),
   ],
