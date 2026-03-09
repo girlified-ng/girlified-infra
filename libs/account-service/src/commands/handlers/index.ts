@@ -9,6 +9,7 @@ import { UpdateAccountPasswordHandler } from './UpdateAccountPasswordHandler';
 import { VerifyNewAccountEmailHandler } from './VerifyNewAccountEmailHandler';
 import { UpdateAccountLocationHandler } from './UpdateAccountLocationHandler';
 import { RegisterMonthlySurveyHandler } from './RegisterMonthlySurveyHandler';
+import { UpdateAccountSocialHandlesHandler } from './UpdateAccountSocialHandlesHandler';
 
 export const AccountServiceCommandHandlers = [
   DeleteAccountHandler,
@@ -22,4 +23,5 @@ export const AccountServiceCommandHandlers = [
   VerifyNewAccountEmailHandler,
   UpdateAccountFCMTokenHandler,
   RegisterMonthlySurveyHandler,
+  UpdateAccountSocialHandlesHandler,
 ];

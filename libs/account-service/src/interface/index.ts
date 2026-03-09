@@ -311,3 +311,33 @@ export class ReportAIResponseDTO {
   @IsNotEmpty()
   responseType: string;
 }
+
+export class UpdateSocialHandlesDTO {
+  @ApiProperty({
+    example: '@user',
+  })
+  @IsString()
+  @IsNotEmpty()
+  xHandle: string;
+
+  @ApiProperty({
+    example: '@user',
+  })
+  @IsString()
+  @IsNotEmpty()
+  instagramHandle: string;
+
+  @ApiProperty({
+    example: '@user',
+  })
+  @IsString()
+  @IsNotEmpty()
+  tiktokHandle: string;
+
+  @ApiProperty({
+    example: '@user',
+  })
+  @IsString()
+  @IsNotEmpty()
+  snapchatHandle: string;
+}

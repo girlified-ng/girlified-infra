@@ -28,6 +28,7 @@ import {
   UpdateAccountPhoneDTO,
   UpdateFCMTokenDTO,
   UpdateProfileImageDTO,
+  UpdateSocialHandlesDTO,
   VerifyNewAccountEmailDTO,
 } from '../interface';
 import {
@@ -45,6 +46,7 @@ import {
   UpdateAccountLocationCommand,
   UpdateAccountPasswordCommand,
   VerifyNewAccountEmailCommand,
+  UpdateAccountSocialHandlesCommand,
 } from '../commands/impl';
 import {
   MonthlySurveyInfo,
@@ -65,7 +67,7 @@ export class AccountController {
     public queryBus: QueryBus,
     public commandBus: CommandBus,
     public readonly accountService: AccountService,
-  ) {}
+  ) { }
 
   @ApiTags('me')
   @Get('detailed')
@@ -282,6 +284,20 @@ export class AccountController {
   ): Promise<MonthlySurveyInfo> {
     return await this.commandBus.execute(
       new RegisterMonthlySurveyCommand(payload, secureUser),
+    );
+  }
+
+  @ApiTags('protection')
+  @Patch('update-social-handles')
+  @ApiOkResponse({ type: AccountInfo })
+  @ApiInternalServerErrorResponse()
+  async updateSocialHandles(
+    @Req() req: Request,
+    @Body() payload: UpdateSocialHandlesDTO,
+    @SecureUser() secureUser: SecureUserPayload,
+  ): Promise<AccountInfo> {
+    return await this.commandBus.execute(
+      new UpdateAccountSocialHandlesCommand(payload, secureUser),
     );
   }
 }

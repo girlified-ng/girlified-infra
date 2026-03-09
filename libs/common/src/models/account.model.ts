@@ -219,7 +219,6 @@ export class Account {
   @ApiPropertyOptional({
     description: 'Last login e.g 2024-11-10_T_11:29:22',
   })
-
   lastLogin: Date;
 
   @Column({ default: '', nullable: true })
@@ -227,6 +226,30 @@ export class Account {
     description: 'Signup verification hash',
   })
   signupVerificationHash: string;
+
+  @Column({ default: '', nullable: true })
+  @ApiPropertyOptional({
+    description: 'Twitter/X handle',
+  })
+  xHandle: string;
+
+  @Column({ default: '', nullable: true })
+  @ApiPropertyOptional({
+    description: 'Instagram handle',
+  })
+  instagramHandle: string;
+
+  @Column({ default: '', nullable: true })
+  @ApiPropertyOptional({
+    description: 'Tiktok handle',
+  })
+  tiktokHandle: string;
+
+  @Column({ default: '', nullable: true })
+  @ApiPropertyOptional({
+    description: 'Snapchat handle',
+  })
+  snapchatHandle: string;
 
   @CreateDateColumn({ nullable: true })
   @ApiPropertyOptional({
@@ -279,4 +302,16 @@ export class AccountInfo {
 
   @ApiProperty({ example: 'MDX-DF1LUVRU' })
   referralCode: string;
+
+  @ApiProperty({ example: '@johndoe' })
+  xHandle: string;
+
+  @ApiProperty({ example: '@johndoe' })
+  instagramHandle: string;
+
+  @ApiProperty({ example: '@johndoe' })
+  tiktokHandle: string;
+
+  @ApiProperty({ example: '@johndoe' })
+  snapchatHandle: string;
 }

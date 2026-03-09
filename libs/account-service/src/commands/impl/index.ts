@@ -13,6 +13,7 @@ import {
   OrderSanitaryPadDTO,
   RegisterMonthlySurveyDTO,
   ReportAIResponseDTO,
+  UpdateSocialHandlesDTO,
 } from '../../interface';
 
 export class UpdateAccountFCMTokenCommand {
@@ -20,7 +21,7 @@ export class UpdateAccountFCMTokenCommand {
     public readonly origin: string,
     public readonly payload: UpdateFCMTokenDTO,
     public readonly secureUser: SecureUserPayload,
-  ) {}
+  ) { }
 }
 
 export class UpdateProfileImageCommand {
@@ -28,7 +29,7 @@ export class UpdateProfileImageCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateProfileImageDTO,
-  ) {}
+  ) { }
 }
 
 export class UpdateAccountPasswordCommand {
@@ -36,7 +37,7 @@ export class UpdateAccountPasswordCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateAccountPasswordDTO,
-  ) {}
+  ) { }
 }
 
 export class DeleteAccountCommand {
@@ -44,7 +45,7 @@ export class DeleteAccountCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: DeleteAccountDTO,
-  ) {}
+  ) { }
 }
 
 export class UpdateAccountNameCommand {
@@ -52,7 +53,7 @@ export class UpdateAccountNameCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateAccountNameDTO,
-  ) {}
+  ) { }
 }
 
 export class UpdateAccountEmailCommand {
@@ -60,7 +61,7 @@ export class UpdateAccountEmailCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateAccountEmailDTO,
-  ) {}
+  ) { }
 }
 
 export class VerifyNewAccountEmailCommand {
@@ -68,7 +69,7 @@ export class VerifyNewAccountEmailCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: VerifyNewAccountEmailDTO,
-  ) {}
+  ) { }
 }
 
 export class UpdateAccountPhoneCommand {
@@ -76,7 +77,7 @@ export class UpdateAccountPhoneCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateAccountPhoneDTO,
-  ) {}
+  ) { }
 }
 
 export class UpdateAccountLocationCommand {
@@ -84,7 +85,7 @@ export class UpdateAccountLocationCommand {
     public readonly origin: string,
     public readonly secureUser: SecureUserPayload,
     public readonly payload: UpdateAccountLocationDTO,
-  ) {}
+  ) { }
 }
 
 
@@ -92,12 +93,19 @@ export class OrderSanitaryPadCommand {
   constructor(
     public readonly payload: OrderSanitaryPadDTO,
     public readonly secureUser: SecureUserPayload,
-  ) {}
+  ) { }
 }
 
 export class RegisterMonthlySurveyCommand {
   constructor(
     public readonly payload: RegisterMonthlySurveyDTO,
     public readonly secureUser: SecureUserPayload,
-  ) {}
+  ) { }
+}
+
+export class UpdateAccountSocialHandlesCommand {
+  constructor(
+    public readonly payload: UpdateSocialHandlesDTO,
+    public readonly secureUser: SecureUserPayload,
+  ) { }
 }
