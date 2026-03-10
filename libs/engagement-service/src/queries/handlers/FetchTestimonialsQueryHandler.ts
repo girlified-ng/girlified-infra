@@ -31,14 +31,14 @@ export class FetchTestimonialsQueryHandler
       // await this.cacheManager.del(cacheKey);
 
       // Try cache first
-      // const cachedResult =
-      //   await this.cacheManager.get<TestimonialInfo[]>(cacheKey);
-      // if (cachedResult) {
-      //   this.logger.log(
-      //     `[FETCH-TESTIMONIALS-QUERY-HANDLER-CACHE-HIT]: ${cacheKey}`,
-      //   );
-      //   return cachedResult;
-      // }
+      const cachedResult =
+        await this.cacheManager.get<TestimonialInfo[]>(cacheKey);
+      if (cachedResult) {
+        this.logger.log(
+          `[FETCH-TESTIMONIALS-QUERY-HANDLER-CACHE-HIT]: ${cacheKey}`,
+        );
+        return cachedResult;
+      }
 
       this.logger.log(
         `[FETCH-TESTIMONIALS-QUERY-HANDLER-PROCESSING]: ${JSON.stringify(query)}`,
