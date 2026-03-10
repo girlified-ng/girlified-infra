@@ -11,6 +11,7 @@ import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { QueryHandler, IQueryHandler } from '@nestjs/cqrs';
 import { AppLogger } from 'libs/common/src/logger/logger.service';
 import { FormatTestimonialInfo } from '@app/common/src/middlewares/models.formatter';
+import { shuffle } from 'lodash';
 
 @QueryHandler(FetchTestimonialsQuery)
 export class FetchTestimonialsQueryHandler
@@ -53,7 +54,7 @@ export class FetchTestimonialsQueryHandler
 
       this.logger.log(`[FETCH-TESTIMONIALS-QUERY-HANDLER-SUCCESS]`);
 
-      return result;
+      return shuffle(result);
     } catch (error) {
       this.logger.log(`[FETCH-TESTIMONIALS-QUERY-HANDLER]: ${error}`);
 
