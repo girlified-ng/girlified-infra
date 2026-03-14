@@ -317,27 +317,27 @@ export class UpdateSocialHandlesDTO {
     example: '@user',
   })
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   xHandle: string;
 
   @ApiProperty({
     example: '@user',
   })
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   instagramHandle: string;
 
   @ApiProperty({
     example: '@user',
   })
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   tiktokHandle: string;
 
   @ApiProperty({
     example: '@user',
   })
   @IsString()
-  @IsNotEmpty()
+  @IsOptional()
   snapchatHandle: string;
 }

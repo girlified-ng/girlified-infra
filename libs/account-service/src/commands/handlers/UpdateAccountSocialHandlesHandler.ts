@@ -33,10 +33,10 @@ export class UpdateAccountSocialHandlesHandler
       }
 
       Object.assign(account, {
-        xHandle: payload.xHandle,
-        tiktokHandle: payload.tiktokHandle,
-        snapchatHandle: payload.snapchatHandle,
-        instagramHandle: payload.instagramHandle,
+        xHandle: payload?.xHandle,
+        tiktokHandle: payload?.tiktokHandle,
+        snapchatHandle: payload?.snapchatHandle,
+        instagramHandle: payload?.instagramHandle,
       });
 
       await this.accountRepository.save(account);
