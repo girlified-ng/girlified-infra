@@ -31,14 +31,14 @@ export class FetchTestimonialsQueryHandler
       // await this.cacheManager.del(cacheKey);
 
       // Try cache first
-      const cachedResult =
-        await this.cacheManager.get<TestimonialInfo[]>(cacheKey);
-      if (cachedResult) {
-        this.logger.log(
-          `[FETCH-TESTIMONIALS-QUERY-HANDLER-CACHE-HIT]: ${cacheKey}`,
-        );
-        return cachedResult;
-      }
+      // const cachedResult =
+      //   await this.cacheManager.get<TestimonialInfo[]>(cacheKey);
+      // if (cachedResult) {
+      //   this.logger.log(
+      //     `[FETCH-TESTIMONIALS-QUERY-HANDLER-CACHE-HIT]: ${cacheKey}`,
+      //   );
+      //   return cachedResult;
+      // }
 
       this.logger.log(
         `[FETCH-TESTIMONIALS-QUERY-HANDLER-PROCESSING]: ${JSON.stringify(query)}`,
@@ -46,7 +46,7 @@ export class FetchTestimonialsQueryHandler
 
       const testimonials = await this.testimonialRepository.find();
 
-      const result = testimonials.map(FormatTestimonialInfo);
+      const result = shuffle(testimonials.map(FormatTestimonialInfo));
 
       const CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
 
@@ -54,7 +54,7 @@ export class FetchTestimonialsQueryHandler
 
       this.logger.log(`[FETCH-TESTIMONIALS-QUERY-HANDLER-SUCCESS]`);
 
-      return shuffle(result);
+      return result;
     } catch (error) {
       this.logger.log(`[FETCH-TESTIMONIALS-QUERY-HANDLER]: ${error}`);
 
