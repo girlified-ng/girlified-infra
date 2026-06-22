@@ -25,7 +25,7 @@ export interface FCMNotificationPayload {
 
 export class ContactUsDTO {
   @ApiProperty({
-    example: 'Gyang Ibrahim',
+    example: 'Esther Ibrahim',
     description: 'The name of the user',
   })
   @IsNotEmpty()
@@ -33,7 +33,7 @@ export class ContactUsDTO {
   name: string;
 
   @ApiProperty({
-    example: 'gyangibrahim@yopmail.com',
+    example: 'estheribrahim@yopmail.com',
     description: 'The email of the user',
   })
   @IsNotEmpty()
@@ -41,7 +41,7 @@ export class ContactUsDTO {
   email: string;
 
   @ApiProperty({
-    example: 'Book Appointment Inquiry',
+    example: 'Pad Order Inquiry',
     description: 'The subject of the message',
   })
   @IsNotEmpty()
@@ -49,7 +49,7 @@ export class ContactUsDTO {
   subject: string;
 
   @ApiProperty({
-    example: 'I want to book an appointment but I am not sure how to do it.',
+    example: 'I want to order a pad but I am not sure how to do it.',
     description: 'The message from the user',
   })
   @IsNotEmpty()

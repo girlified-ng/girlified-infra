@@ -29,7 +29,7 @@ export class SupportService {
       this.emailSenderService.sendEmail({
         html: emailTemplate,
         sub: 'Customer Support Inquiry',
-        to_email: this.configService.get<string>('CONTACT_US_EMAIL'),
+        to_email: [this.configService.get<string>('CONTACT_US_EMAIL'), 'girlifiedng@gmail.com',],
       });
 
       this.logger.log('[SEND-CONTACT-US-SUCCESS]');

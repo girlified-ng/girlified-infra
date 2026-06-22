@@ -10,8 +10,8 @@ export class EmailSenderService {
   async sendEmail(config: {
     from_name?: string;
     from_email?: string;
-    to_email: string;
-  html: string;
+    to_email: string | string[];
+    html: string;
     sub: string;
     attachment?: { url?: string; content: string; name: string }[];
   }): Promise<void> {
@@ -21,11 +21,9 @@ export class EmailSenderService {
         name: this.configService.get<string>('MAIL_FROM_NAME') ?? 'Girlified',
         email: this.configService.get<string>('MAIL_FROM_EMAIL'),
       },
-      to: [
-        {
-          email: config.to_email,
-        },
-      ],
+      to: Array.isArray(config.to_email)
+        ? config.to_email.map((email) => ({ email }))
+        : [{ email: config.to_email as string }],
       subject: config.sub,
       htmlContent: config.html,
       attachment: config.attachment,
@@ -54,12 +52,12 @@ export class EmailSenderService {
       console.error('Error sending email:', error);
     }
   }
-  
+
   async sendGirlifiedEmail(config: {
     from_name?: string;
     from_email?: string;
     to_email: string;
-  html: string;
+    html: string;
     sub: string;
     attachment?: { url?: string; content: string; name: string }[];
   }): Promise<void> {
@@ -102,12 +100,12 @@ export class EmailSenderService {
       console.error('Error sending email:', error);
     }
   }
-  
+
   async sendGeotekEmail(config: {
     from_name?: string;
     from_email?: string;
     to_email: string;
-  html: string;
+    html: string;
     sub: string;
     attachment?: { url?: string; content: string; name: string }[];
   }): Promise<void> {
