@@ -24,7 +24,7 @@ export class SupportService {
         payload.message,
       );
 
-      // console.log('PAYLOAD - ', payload);
+      // console.log('PAYLOAD - ', payload,);
 
       this.emailSenderService.sendEmail({
         html: emailTemplate,
